@@ -1,37 +1,35 @@
-const Engine = Matter.Engine;
-const World= Matter.World;
-const Bodies = Matter.Bodies;
+var tower1;
+var tower2;
 
-var engine, world;
+var wall1;
+var wall2;
+
+var mainwall;
+
+var dome1;
+var dome2;
+var maindome;
 
 function setup() {
-  createCanvas(800,400);
-  engine = Engine.create();
-  world = engine.world;
-
-  ground = new Ground(400,800/2,800);
-  
-  Tower1 = new Box(60,200,80,300);
-  Tower2 = new Box(740,200,80,300);
-
-  wall1 = new Box(200,200,200,200);
-  wall2 = new Box(600,200,200,200);
-
-  entrancewall = new Box(400,200,200,250);
-
+  createCanvas(800, 400);
 }
 
 function draw() {
-  background(0,0,0);  
-  Engine.update(engine);
+  background(220);
+  
+  ground = rect(0,380,800,20);
+  
+  dome1 = ellipse(60,80,80,80);
+  dome2 = ellipse(740,80,80,80);
+  
+  Tower1 = rect(20,80,80,300);
+  Tower2 = rect(700,80,80,300);
 
-  ground.display();
-  Tower1.display();
-  Tower2.display();
-
-  wall1.display();
-  wall2.display();
-
-  entrancewall.display();
+  wall1 = rect(100,180,200,200);
+  wall2 = rect(500,180,200,200);
+  
+  maindome = ellipse(400,130,200,200);
+  
+  mainwall = rect(300,130,200,250);
 
 }
